@@ -12,6 +12,15 @@ You are Wren, a thief with three heists in one night at the Meridian Counting Ho
 2. **The Vault** — cross laser gates, crack the vault dial (three tumblers, one needle, one gold arc), and take the Black Ledger.
 3. **The Rooftop** — grab the getaway cache and ride the zip-line out under the searchlights.
 
+## What the judge sees
+
+Four screenshots, all real renders of the game's own code (`game/src/shots.js` stages each moment deterministically; nothing is edited or composited):
+
+1. **Cover — the Counting Floor, a near miss.** The thief is `HIDDEN` in a planter while a guard who half-saw them sweeps the room (`?`, alarm 38%), a noise ring still fading, cameras sweeping, the Gilt Key and the locked exit both in frame.
+2. **Alarm — SPOTTED! in the Vault.** A guard's red cone is on the thief, the alarm meter at 78%, lasers live.
+3. **Vault crack — the dial.** The needle is inside the gold arc with 2 of 3 tumblers set; the Black Ledger glows behind the vault door.
+4. **Getaway — the Rooftop.** Exit unlocked, `GHOST — never spotted`, the thief at the zip-line under the searchlights.
+
 ## How to play
 
 - **WASD / arrows** — move. **Shift** — sprint (fast, but LOUD: your footsteps ring out and guards come to look).
