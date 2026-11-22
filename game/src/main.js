@@ -209,6 +209,11 @@ function updatePlaying(dt, input) {
     caught('Dawn breaks — the morning crew walks in.');
     return;
   }
+  // The alarm may have hit 100 off-tick (a laser trip clamps it there).
+  if (game.alarm >= 100) {
+    caught('The alarm hit the roof and the house locked down.');
+    return;
+  }
 
   // Guards.
   const ctxGuard = {

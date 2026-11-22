@@ -2,7 +2,7 @@
 // suspicious when it glimpses the thief, searches the last seen (or heard)
 // spot, chases on full alarm, then gives up and returns to patrol.
 // States: patrol, suspicious, search, chase, return.
-import { TILE, GUARD_PATROL_SPEED, GUARD_SEARCH_SPEED, GUARD_CHASE_SPEED, CONE_RANGE_LIT, CONE_HALF_ANGLE, SUSPICION_RATE, SUSPICION_DECAY } from './config.js';
+import { TILE, GUARD_R, GUARD_PATROL_SPEED, GUARD_SEARCH_SPEED, GUARD_CHASE_SPEED, CONE_RANGE_LIT, CONE_HALF_ANGLE, SUSPICION_RATE, SUSPICION_DECAY } from './config.js';
 import { seesThief, hasLineOfSight } from './vision.js';
 
 export function createGuard(def, index) {

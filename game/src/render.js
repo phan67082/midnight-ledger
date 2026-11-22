@@ -282,7 +282,7 @@ function drawItems(ctx, game) {
     ctx.fillStyle = COLORS.text;
     ctx.font = 'bold 9px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(v.cracked ? 'OPEN' : 'VAULT', v.x, v.y - 26);
+    ctx.fillText(v.cracked ? 'OPEN' : 'VAULT', v.x, v.y + 30);
   }
   const exit = level.exit;
   if (exit) {
@@ -302,7 +302,8 @@ function drawItems(ctx, game) {
     if (open) {
       ctx.fillStyle = COLORS.exit;
       ctx.font = 'bold 11px sans-serif';
-      ctx.fillText('EXIT UNLOCKED', exit.x, exit.y - 28);
+      ctx.textAlign = 'left';
+      ctx.fillText('EXIT UNLOCKED', exit.x + 26, exit.y + 4);
     }
   }
 }

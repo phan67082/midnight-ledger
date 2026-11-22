@@ -55,11 +55,11 @@ function shotCover(game) {
 function shotAlarm(game) {
   game.levelIndex = 1;
   game.loadLevel(1);
-  placePlayer(game, 12, 9);
+  placePlayer(game, 14, 13);
   game.player.sprinting = true;
   game.player.visibility = 1;
   game.player.lit = true;
-  placeGuard(game, 0, 10, 9, 0, 'chase', 100);
+  placeGuard(game, 0, 13, 12, 45, 'chase', 100);
   placeGuard(game, 1, 5, 15, -70, 'search', 55);
   placeGuard(game, 2, 18, 5, 160, 'suspicious', 40);
   game.alarm = 78;
@@ -71,7 +71,7 @@ function shotAlarm(game) {
   game.player.lootCount = 4;
   game.player.coins = 1;
   game.player.matches = 2;
-  ring(game, 12, 9, 130, 185);
+  ring(game, 14, 13, 130, 185);
   game.banner = { text: 'SPOTTED!', sub: 'Break line of sight — the alarm fades when you are unseen', color: '#ff5040' };
   for (const laser of game.lasers) laser.on = true;
 }
