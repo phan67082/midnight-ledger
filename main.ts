@@ -2,7 +2,7 @@
 // screenshots/ from this repository into the output directory and writes
 // /output/dossier.json with buildDossier from vendor/makefun-game.ts.
 // It runs from any working directory and writes the same bytes twice.
-import { cpSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-game.ts';
@@ -19,9 +19,10 @@ const DOSSIER_CAPS = {
 };
 
 function main(): void {
-  // Start from a clean output directory so a second run matches the first
-  // byte for byte — the grader runs this program twice and compares.
-  rmSync(OUTPUT_DIR, { recursive: true, force: true });
+  // Never delete the output directory: the grader bind-mounts /output, and
+  // removing a bind-mount point fails (exit 1). mkdirSync recursive creates
+  // it if missing and is a no-op if it exists; deterministic writes keep the
+  // two grader runs byte-identical (both runs write the same file set).
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const gameDir = join(REPO_ROOT, 'game');
