@@ -282,7 +282,8 @@ function drawItems(ctx, game) {
     ctx.fillStyle = COLORS.text;
     ctx.font = 'bold 9px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(v.cracked ? 'OPEN' : 'VAULT', v.x, v.y + 30);
+    // The dial covers the vault while cracking, so the label steps aside then.
+    if (game.phase !== 'crack') ctx.fillText(v.cracked ? 'OPEN' : 'VAULT', v.x, v.y + 30);
   }
   const exit = level.exit;
   if (exit) {
